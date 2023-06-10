@@ -1,0 +1,19 @@
+.cardBody {
+    padding: 0
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+
+.footerMessageWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
