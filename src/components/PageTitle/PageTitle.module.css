@@ -1,18 +1,18 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
 }
 
 .text {
-    background:red;
-    border-radius: 50%;
-    height: 18px;
-    width: 18px;
-    font-size: 10px;
-    line-height: 17px;
-    display: inline-block;
-    text-align: center;
+  background: red;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  font-size: 10px;
+  line-height: 17px;
+  display: inline-block;
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 "use client";
 import { Chart } from "@antv/g2";
 import { useEffect } from "react";
+import { Data } from "./types";
 
 export const Chart1 = () => {
   useEffect(() => {
@@ -22,12 +23,12 @@ export const Chart1 = () => {
       }
 
       const response = await res.json();
-      const data = response.body;
+      const data = response.body as Data;
 
       chart
         .line()
         .data(data)
-        .encode("x", (d) => new Date(d.date))
+        .encode("x", (d: Data) => new Date(d.date))
         .encode("y", "cumPeopleVaccinatedFirstDoseByPublishDate")
         .legend();
 
