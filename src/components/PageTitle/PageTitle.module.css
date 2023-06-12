@@ -17,14 +17,14 @@
 }
 
 .button {
-    border: unset;
-    height: unset;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
+  border: unset;
+  height: unset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 
 .title {
-    font-weight: normal;
+  font-weight: normal;
 }
