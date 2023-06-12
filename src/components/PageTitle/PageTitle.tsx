@@ -1,4 +1,3 @@
-import { DownloadOutlined } from "@ant-design/icons";
 import {
   FileDownloadOutlined,
   FilterList,
@@ -12,47 +11,22 @@ const { Text, Title } = Typography;
 export const PageTitle = () => {
   return (
     <div className={styles.wrapper}>
-      <Title level={3} style={{ fontWeight: "normal" }}>
+      <Title level={3} className={styles.title}>
         Page title
       </Title>
       <Space>
-        <Button
-          style={{
-            border: "unset",
-            height: "unset",
-            display: "flex",
-            flexDirection: "row",
-            gap: 5,
-          }}
-        >
+        <Button className={styles.button}>
           <Text>Export to PDF</Text>
           <FileDownloadOutlined style={{ color: green[7] }} />
         </Button>
-        <Button
-          style={{
-            border: "unset",
-            height: "unset",
-            display: "flex",
-            flexDirection: "row",
-            gap: 5,
-          }}
-        >
+        <Button className={styles.button}>
           <div>
             <Text>Notes</Text>
             <Text style={{ color: gray[1] }}>(3)</Text>
           </div>
           <NotesOutlined style={{ color: green[7] }} />
         </Button>
-        <Button
-          style={{
-            border: "unset",
-            height: "unset",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: 5,
-          }}
-        >
+        <Button className={styles.button}>
           <Text>Filter</Text>
           <Text
             className={styles.text}
