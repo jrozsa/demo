@@ -6,19 +6,17 @@ import { Data } from "./types";
 export const Chart2 = () => {
   useEffect(() => {
     const chart = new Chart({
-      container: "container2",
+      container: "chart2",
       theme: "classic",
+      paddingLeft: 60,
     });
     async function getData() {
       const res = await fetch(
-        "https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=cumPeopleVaccinatedFirstDoseByPublishDate&format=json"
+        "https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=cumDeaths60DaysByDeathDateRate&format=json"
       );
-      // The return value is *not* serialized
-      // You can return Date, Map, Set, etc.
 
-      // Recommendation: handle errors
       if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
+        // Error boundary
         throw new Error("Failed to fetch data");
       }
 
@@ -26,11 +24,12 @@ export const Chart2 = () => {
       const data = response.body as Data;
 
       chart
-        .line()
+        .area()
         .data(data)
         .encode("x", (d: Data) => new Date(d.date))
-        .encode("y", "cumPeopleVaccinatedFirstDoseByPublishDate")
-        .legend();
+        .encode("y", "cumDeaths60DaysByDeathDateRate")
+        .axis("x", { title: "Date" })
+        .axis("y", { title: "Death Rate" });
 
       await chart.render();
     }
@@ -38,5 +37,5 @@ export const Chart2 = () => {
     getData();
   }, []);
 
-  return <div id="container2"></div>;
+  return <div id="chart2"></div>;
 };
